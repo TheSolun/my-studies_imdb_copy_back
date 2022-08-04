@@ -2,12 +2,12 @@ package com.thesolunprojects.imdbcopyback.imdbdata.core.repository;
 
 import java.util.List;
 
-import com.thesolunprojects.imdbcopyback.imdbdata.core.entity.TitleBasicsEntity;
+import com.thesolunprojects.imdbcopyback.imdbdata.core.entity.TitleEntity;
 
-public interface TitleBasicsRepository {
+public interface TitleRepository {
 
-	List<TitleBasicsEntity> findAll();
+	List<TitleEntity> findAll();
 
-	List<TitleBasicsEntity> findByIsAdultStartYearAndGenre(boolean isAdult, String startYear, String genre);
+	List<TitleEntity> findByIsAdultStartYearAndGenre(boolean isAdult, String startYear, String genre);
 	
 }
