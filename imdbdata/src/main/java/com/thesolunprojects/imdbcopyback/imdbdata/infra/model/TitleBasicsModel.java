@@ -1,4 +1,4 @@
-package com.thesolunprojects.imdbcopyback.imdbdata.model;
+package com.thesolunprojects.imdbcopyback.imdbdata.infra.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -7,7 +7,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "title_basics")
-public class TitleBasics {
+public class TitleBasicsModel {
         
         @Id
         @Column(name="tconst")

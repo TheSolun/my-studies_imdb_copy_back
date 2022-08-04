@@ -1,6 +1,6 @@
 package com.thesolunprojects.imdbcopyback.imdbdata.core.entity;
 
-public class TitleBasics {
+public class TitleBasicsEntity {
 
 	private String tconst;
 	private String titleType;
@@ -14,7 +14,7 @@ public class TitleBasics {
 	private String genre2;
 	private String genre3;
 	
-	public TitleBasics(String tconst, String titleType, String primaryTitle, String originalTitle, boolean isAdult,
+	public TitleBasicsEntity(String tconst, String titleType, String primaryTitle, String originalTitle, boolean isAdult,
 			String startYear, String endYear, String runtimeMinute, String genre1, String genre2, String genre3) {
 		this.tconst = tconst;
 		this.titleType = titleType;
