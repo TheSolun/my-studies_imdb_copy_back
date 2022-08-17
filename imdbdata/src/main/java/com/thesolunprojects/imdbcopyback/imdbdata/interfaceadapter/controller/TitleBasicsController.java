@@ -6,6 +6,7 @@ import java.util.stream.Collectors;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.thesolunprojects.imdbcopyback.imdbdata.businessrule.exception.TitleBasicsNotFoundException;
 import com.thesolunprojects.imdbcopyback.imdbdata.businessrule.usecase.GetAllTitleBasicsUC;
 import com.thesolunprojects.imdbcopyback.imdbdata.businessrule.usecase.GetTitleBasicsByGenreUC;
 import com.thesolunprojects.imdbcopyback.imdbdata.interfaceadapter.controller.model.GetTitleBasicsResponse;
@@ -21,19 +22,27 @@ public class TitleBasicsController {
 	private GetTitleBasicsByGenreUC getTitleBasicsByGenreUC;
 
 	public List<GetTitleBasicsResponse> getAllTitleBasics() {
-		return getAllTitleBasicsUC
-				.execute()
-				.stream()
-				.map(entity -> GetTitleBasicsResponseMapper.entityToResponse(entity))
-				.collect(Collectors.toList());
+		try {
+			return getAllTitleBasicsUC
+					.execute()
+					.stream()
+					.map(entity -> GetTitleBasicsResponseMapper.entityToResponse(entity))
+					.collect(Collectors.toList());
+		} catch (IllegalArgumentException e) {
+			throw new TitleBasicsNotFoundException(e.getMessage());
+		}
 	}
 	
 	public List<GetTitleBasicsResponse> getTitleBasicsFilteredByGenre(String genre) {
-		return getTitleBasicsByGenreUC
-				.execute(genre)
-				.stream()
-				.map(entity -> GetTitleBasicsResponseMapper.entityToResponse(entity))
-				.collect(Collectors.toList());
+		try {
+			return getTitleBasicsByGenreUC
+					.execute(genre)
+					.stream()
+					.map(entity -> GetTitleBasicsResponseMapper.entityToResponse(entity))
+					.collect(Collectors.toList());
+		} catch (IllegalArgumentException e) {
+			throw new TitleBasicsNotFoundException(e.getMessage());
+		}
 	}
 	
 }
