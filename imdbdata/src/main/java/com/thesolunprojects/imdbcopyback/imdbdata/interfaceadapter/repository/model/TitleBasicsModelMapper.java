@@ -12,7 +12,9 @@ public abstract class TitleBasicsModelMapper {
 			model.getOriginalTitle(),
 			model.isAdult() == 1,
 			model.getStartYear(),
-			model.getEndYear(),
+			(model.getEndYear().length() >= 1 && model.getEndYear().charAt(0) != 'N')
+				? model.getEndYear()
+				: null,
 			(model.getRuntimeMinutes().length() >= 1 && model.getRuntimeMinutes().charAt(0) != 'N')
 				? Integer.parseInt(model.getRuntimeMinutes()) 
 				: null,
