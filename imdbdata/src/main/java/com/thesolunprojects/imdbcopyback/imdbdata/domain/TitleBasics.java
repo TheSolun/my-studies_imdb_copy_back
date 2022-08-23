@@ -9,13 +9,13 @@ public class TitleBasics {
 	private boolean isAdult;
 	private String startYear;
 	private String endYear;
-	private int runtimeMinutes;
+	private Integer runtimeMinutes;
 	private String genre1;
 	private String genre2;
 	private String genre3;
 	
 	public TitleBasics(String tconst, String titleType, String primaryTitle, String originalTitle, boolean isAdult,
-			String startYear, String endYear, int runtimeMinutes, String genre1, String genre2, String genre3) {
+			String startYear, String endYear, Integer runtimeMinutes, String genre1, String genre2, String genre3) {
 		this.tconst = tconst;
 		this.titleType = titleType;
 		this.primaryTitle = primaryTitle;
@@ -57,7 +57,7 @@ public class TitleBasics {
 		return endYear;
 	}
 
-	public int getRuntimeMinutes() {
+	public Integer getRuntimeMinutes() {
 		return runtimeMinutes;
 	}
 
@@ -72,7 +72,7 @@ public class TitleBasics {
 	public String getGenre3() {
 		return genre3;
 	}
-
+	
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -114,7 +114,10 @@ public class TitleBasics {
 				return false;
 		} else if (!primaryTitle.equals(other.primaryTitle))
 			return false;
-		if (runtimeMinutes != other.runtimeMinutes)
+		if (runtimeMinutes == null) {
+			if (other.runtimeMinutes != null)
+				return false;
+		} else if (!runtimeMinutes.equals(other.runtimeMinutes))
 			return false;
 		if (startYear == null) {
 			if (other.startYear != null)

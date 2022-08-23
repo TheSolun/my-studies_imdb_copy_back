@@ -22,15 +22,11 @@ public class TitleBasicsController {
 	private GetTitleBasicsByGenreUC getTitleBasicsByGenreUC;
 
 	public List<GetTitleBasicsResponse> getAllTitleBasics() {
-		try {
-			return getAllTitleBasicsUC
-					.execute()
-					.stream()
-					.map(entity -> GetTitleBasicsResponseMapper.entityToResponse(entity))
-					.collect(Collectors.toList());
-		} catch (IllegalArgumentException e) {
-			throw new TitleBasicsNotFoundException(e.getMessage());
-		}
+		return getAllTitleBasicsUC
+				.execute()
+				.stream()
+				.map(entity -> GetTitleBasicsResponseMapper.entityToResponse(entity))
+				.collect(Collectors.toList());
 	}
 	
 	public List<GetTitleBasicsResponse> getTitleBasicsFilteredByGenre(String genre) {
