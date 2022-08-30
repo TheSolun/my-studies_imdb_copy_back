@@ -16,7 +16,7 @@ import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
 import com.thesolunprojects.imdbcopyback.imdbdata.domain.TitleBasics;
-import com.thesolunprojects.imdbcopyback.imdbdata.interfaceadapter.TitleBasicsGateway;
+import com.thesolunprojects.imdbcopyback.imdbdata.interfaceadapter.gateway.TitleBasicsGateway;
 
 @ExtendWith(MockitoExtension.class)
 class GetAllTitleBasicsUCTest {

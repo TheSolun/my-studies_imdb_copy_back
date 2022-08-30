@@ -1,4 +1,4 @@
-package com.thesolunprojects.imdbcopyback.imdbdata.interfaceadapter;
+package com.thesolunprojects.imdbcopyback.imdbdata.interfaceadapter.gateway;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -7,9 +7,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.thesolunprojects.imdbcopyback.imdbdata.domain.TitleBasics;
-import com.thesolunprojects.imdbcopyback.imdbdata.interfaceadapter.repository.TitleBasicsRepository;
-import com.thesolunprojects.imdbcopyback.imdbdata.interfaceadapter.repository.model.TitleBasicsModel;
-import com.thesolunprojects.imdbcopyback.imdbdata.interfaceadapter.repository.model.TitleBasicsModelMapper;
+import com.thesolunprojects.imdbcopyback.imdbdata.interfaceadapter.gateway.repository.TitleBasicsRepository;
+import com.thesolunprojects.imdbcopyback.imdbdata.interfaceadapter.gateway.repository.model.TitleBasicsModel;
+import com.thesolunprojects.imdbcopyback.imdbdata.interfaceadapter.gateway.repository.model.TitleBasicsModelMapper;
 
 @Service
 public class TitleBasicsGateway {

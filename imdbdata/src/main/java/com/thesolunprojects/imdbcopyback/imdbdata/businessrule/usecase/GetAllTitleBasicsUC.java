@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.thesolunprojects.imdbcopyback.imdbdata.domain.TitleBasics;
-import com.thesolunprojects.imdbcopyback.imdbdata.interfaceadapter.TitleBasicsGateway;
+import com.thesolunprojects.imdbcopyback.imdbdata.interfaceadapter.gateway.TitleBasicsGateway;
 
 @Service
 public class GetAllTitleBasicsUC {

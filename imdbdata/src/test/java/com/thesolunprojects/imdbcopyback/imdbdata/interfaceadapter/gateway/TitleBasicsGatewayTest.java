@@ -1,4 +1,4 @@
-package com.thesolunprojects.imdbcopyback.imdbdata.interfaceadapter;
+package com.thesolunprojects.imdbcopyback.imdbdata.interfaceadapter.gateway;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
@@ -17,8 +17,9 @@ import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
 import com.thesolunprojects.imdbcopyback.imdbdata.domain.TitleBasics;
-import com.thesolunprojects.imdbcopyback.imdbdata.interfaceadapter.repository.TitleBasicsRepository;
-import com.thesolunprojects.imdbcopyback.imdbdata.interfaceadapter.repository.model.TitleBasicsModel;
+import com.thesolunprojects.imdbcopyback.imdbdata.interfaceadapter.gateway.TitleBasicsGateway;
+import com.thesolunprojects.imdbcopyback.imdbdata.interfaceadapter.gateway.repository.TitleBasicsRepository;
+import com.thesolunprojects.imdbcopyback.imdbdata.interfaceadapter.gateway.repository.model.TitleBasicsModel;
 
 @ExtendWith(MockitoExtension.class)
 class TitleBasicsGatewayTest {
@@ -41,7 +42,7 @@ class TitleBasicsGatewayTest {
 		modelsTitlesList.add(modelTitle);
 		
 		final TitleBasics entityTitle = new TitleBasics(
-			"tt0000001","short","Carmencita","Carmencita",false,"1894","N",1,"Documentary","Short","N"
+			"tt0000001","short","Carmencita","Carmencita",false,"1894",null,1,"Documentary","Short",null
 		);
 		final List<TitleBasics> entitysTitlesList = new ArrayList<TitleBasics>();
 		entitysTitlesList.add(entityTitle);
@@ -93,7 +94,7 @@ class TitleBasicsGatewayTest {
 		modelsTitlesList.add(modelTitle);
 		
 		final TitleBasics entityTitle = new TitleBasics(
-			"tt0000001","short","Carmencita","Carmencita",false,"1894","N",1,genre,"Short","N"
+			"tt0000001","short","Carmencita","Carmencita",false,"1894",null,1,genre,"Short",null
 		);
 		final List<TitleBasics> entitysTitlesList = new ArrayList<TitleBasics>();
 		entitysTitlesList.add(entityTitle);

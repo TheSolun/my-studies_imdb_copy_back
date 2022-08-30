@@ -1,4 +1,4 @@
-package com.thesolunprojects.imdbcopyback.imdbdata.interfaceadapter.repository.model;
+package com.thesolunprojects.imdbcopyback.imdbdata.interfaceadapter.gateway.repository.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
